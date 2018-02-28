@@ -7,3 +7,15 @@ default_users:
     email: 'user2@twotter.com'
     password: '123456'
     password_confirmation: '123456'
+
+
+default_posts:
+  post1:
+    message: 'first message'
+    username: user1
+  post2:
+    message: 'second message'
+    username: user2
+  post3:
+    message: 'third message'
+    username: user1
