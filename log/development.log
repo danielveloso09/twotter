@@ -284,3 +284,15 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "user1@twotter.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@twotter.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "User1"], ["username", "user1"], ["email", "user1@twotter.com"], ["encrypted_password", "$2a$11$1gyO46WdCcEOBS3QI7iseujCANQuHnIV778P64zVe1pQFkkD4NRPO"], ["created_at", "2018-02-28 12:13:01.358167"], ["updated_at", "2018-02-28 12:13:01.358167"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "user2@twotter.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@twotter.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "username", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "User2"], ["username", "user2"], ["email", "user2@twotter.com"], ["encrypted_password", "$2a$11$BAGE11LxLV3DLaZDdGQRkuqQBb7YAixN/Xqxz5/BZl7lnsHz6nkwK"], ["created_at", "2018-02-28 12:13:01.494806"], ["updated_at", "2018-02-28 12:13:01.494806"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
