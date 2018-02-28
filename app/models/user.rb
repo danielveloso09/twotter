@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :followings
+  has_many :followed_users, through: followings
+
   validates :email, format: {
     with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   }, length: { maximum: 80 }
