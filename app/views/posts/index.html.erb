@@ -1,10 +1,15 @@
-<h1>
-  List of all posts
-</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.message %>
-   </li>
-  <% end %>
-</ul>
+ <div class="container">
+  <h1>
+    List of all posts
+  </h1>
+  <ul>
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="card">
+            <%= post.message %>
+        </div>
+      <% end %>
+    </div>
+  </ul>
+</div> 
+
