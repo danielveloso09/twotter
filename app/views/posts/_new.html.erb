@@ -1,0 +1,9 @@
+<%= form_for Post.new do |f| %>
+  <p>
+    Message:
+    <%= f.text_field :message %>
+  </p>
+  <p>
+   <%= f.submit %>
+  </p>
+<% end %>
