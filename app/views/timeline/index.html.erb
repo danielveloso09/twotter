@@ -1,10 +1,10 @@
-<h1>
-  Timeline
-</h1>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.user.name + ": " + post.message %>
-   </li>
-  <% end %>
-</ul>
+ <div class="container">
+  <div class="row">
+    <h1>
+      Timeline
+    </h1>
+    <ul class="list-group">
+      <%= render @posts %>
+    </ul>
+  </div>
+</div> 
