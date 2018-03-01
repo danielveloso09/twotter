@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to "Posts", :posts, class:"nav-link" %>        
+      </li>
+      <li class="nav-item">
+        <%= link_to "Timeline", timeline_index_path, class:"nav-link" %>      
+      </li>
+      <li class="nav-item">
+          <% if user_signed_in? %>
+           <%= link_to "User", edit_user_registration_path(current_user), class:"nav-link" %>           
+          <% end %>
+      </li>
+      <li class="nav-item">
+          <% if user_signed_in? %>
+           <%= link_to 'Logout', sign_out_path, class: "nav-link" %>
+          <% end %>
+      </li>
+    </ul>
+  </div> 
+</nav>

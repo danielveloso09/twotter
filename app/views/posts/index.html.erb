@@ -1,14 +1,10 @@
  <div class="container">
-  <h1>
-    List of all posts
-  </h1>
-  <ul>
-    <div class="row">
-      <% @posts.each do |post| %>
-        <div class="card">
-            <%= post.user.name + ": " + post.message %>
-        </div>
-      <% end %>
-    </div>
-  </ul>
+  <div class="row">
+    <h1>
+      List of all posts
+    </h1>
+    <ul class="list-group">
+      <%= render @posts %>
+    </ul>
+  </div>
 </div> 

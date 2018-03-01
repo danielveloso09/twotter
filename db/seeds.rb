@@ -1,4 +1,4 @@
 User.load_seed
 Post.load_seed
 
-User.first.followed_user << User.last
+User.first.followed_users << User.last
