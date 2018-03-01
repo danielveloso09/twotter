@@ -1,4 +1,6 @@
-<%= form_for, class:"form-group" Post.new do |f| %>
-  <%= f.text_area :message, class:"form-control" %>
-  <%= f.submit %>
-<% end %>
+<li class="list-group-item">
+  <%= form_for Post.new , class:"form-group" do |f| %>
+    <%= f.text_area :message, class:"form-control" %>
+    <%= f.submit 'Send', class:"btn btn-primary float-right" %>
+  <% end %>
+</li>
