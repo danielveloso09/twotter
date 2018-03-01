@@ -13,6 +13,7 @@
     <p class="alert"><%= alert %></p>
 
     <%= link_to "Posts", :posts %>
+    <%= link_to "Timeline", timeline_index_path %>
 
     <% if user_signed_in? %>
       <%= link_to "User", edit_user_registration_path(current_user) %>
