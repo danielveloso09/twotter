@@ -1,13 +1,17 @@
-<h1>
-  List of all posts
-</h1>
+ <div class="container">
+  <h1>
+    List of all posts
+  </h1>
 
-<%= render "posts/new" %>
+  <%= render "posts/new" %>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= post.user.name + ": " + post.message %>
-   </li>
-  <% end %>
-</ul>
+  <ul>
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="card">
+            <%= post.user.name + ": " + post.message %>
+        </div>
+      <% end %>
+    </div>
+  </ul>
+</div>

@@ -11,11 +11,17 @@ default_users:
 
 default_posts:
   post1:
-    message: 'first message'
+    message: 'Int64. The integer representation\
+     is greater than 53 bits and some programming\
+      languages may have difficulty/silent defects in interpreting it. Using a signed 64 bit integ'
     username: user1
   post2:
-    message: 'second message'
+    message: 'Int64. The integer representation\
+     is greater than 53 bits and some programming\
+      languages may have difficulty/silent defects in interpreting it. Using a signed 64 bit integ'
     username: user2
   post3:
-    message: 'third message'
+    message: 'Int64. The integer representation\
+     is greater than 53 bits and some programming\
+      languages may have difficulty/silent defects in interpreting it. Using a signed 64 bit integer'
     username: user1
