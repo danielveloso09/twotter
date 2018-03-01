@@ -1,17 +1,11 @@
 class PostsController < ApplicationController
-  # before_action :set_movie, except: %i[index new create show]
   def index
-    @posts = current_user.posts
+    @posts = Post.all
   end
 
   def create
-    @post = current_user.posts.build(post_parms)
-
-    if @post.save
-      redirect_to @post
-    else
-      render :new
-    end
+    @post = current_user.posts.build(post_parms).save
+    redirect_to request.env['HTTP_REFERER']
   end
 
   private

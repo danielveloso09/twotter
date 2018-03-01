@@ -1,5 +1,5 @@
 class TimelineController < ApplicationController
   def index
-    @posts = Post.myposts(current_user)
+    @posts = Post.timeline_posts(current_user)
   end
 end
