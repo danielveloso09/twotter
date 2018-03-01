@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  scope :followed_users_posts, ->(current_user) { where(user_id: current_user.followed_users) }
+  scope :timeline_posts, -> (current_user) { where(user_id: [current_user.id] + current_user.followed_users).order(:created_at) }
 
   def self.load_seed
     Settings.default_posts.each do |key, attributes|
