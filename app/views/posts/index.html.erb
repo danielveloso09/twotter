@@ -6,10 +6,9 @@
     <div class="row">
       <% @posts.each do |post| %>
         <div class="card">
-            <%= post.message %>
+            <%= post.user.name + ": " + post.message %>
         </div>
       <% end %>
     </div>
   </ul>
 </div> 
-

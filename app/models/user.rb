@@ -2,6 +2,11 @@ class User < ApplicationRecord
   has_many :followings
   has_many :followed_users, through: :followings
 
+  has_many :followees, class_name: 'Following', foreign_key: 'followed_user_id'
+  has_many :followee_users, through: :followees
+
+  has_many :posts
+
   validates :email, format: {
     with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   }, length: { maximum: 80 }

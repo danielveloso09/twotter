@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
+  scope :followed_users_posts, -> (current_user) { where(user_id: current_user.followed_users) }
+
   def self.load_seed
     Settings.default_posts.each do |key, attributes|
       attrs = attributes.to_h
