@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe PoopFilter do
-  context '#filter' do
+  context '.filter' do
     let(:options) { { query: { text: text } } }
     let(:perform) { subject.filter(text) }
     let(:url) { 'http://poopfilter.herokuapp.com/filter' }
@@ -22,12 +22,16 @@ RSpec.describe PoopFilter do
       let(:response) { double(:response, parsed_response: parsed_response) }
 
       it 'returns the text' do
-        expect(HTTParty).to receive(:post)
-          .with(url, options)
+        allow(HTTParty)
+          .to receive(:post)
           .and_return(response)
 
-        expect(response).to receive(:parsed_response)
-          .and_return(parsed_response)
+        perform
+
+        expect(HTTParty).to have_received(:post)
+          .with(url, options)
+
+        expect(response).to have_received(:parsed_response)
 
         expect(perform).to eq(text)
       end
