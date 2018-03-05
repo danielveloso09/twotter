@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  include FilterMessage
   belongs_to :user
 
   scope :timeline_posts, -> (current_user) { where(user_id: [current_user.id] + current_user.followed_users).order(created_at: :desc) }

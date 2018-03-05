@@ -36,6 +36,9 @@ gem 'devise'
 # RailsConfig
 gem 'config'
 
+# http party
+gem 'httparty'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'capybara', '~> 2.13'
